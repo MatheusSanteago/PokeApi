@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+.card{
+    display: flex;
+    align-items: center;
+    flex-flow: column nowrap;
+    border: black solid 3px;
+    padding: 25px;
+    width: 20vw;
+    height: 30vh;
+    border-radius: 10px;
+    margin: 10px;
+    min-width: 150px;
+    max-width: 200px;
+    box-shadow: inset 0px 0px 60px 20px black;
+}
+.pokemon__img{
+    z-index: 1;
+    height: 25vw;
+    min-height: 150px;
+    max-width: 300px;
+}
+.pokemon__img:hover{
+    transform: scale(1.5);
+    cursor: pointer;
+    transition: transform 1s ease-in-out;
+}
+.stats {
+    background-color: beige;
+    display: flex;
+    width: 180px;
+    padding: 10px;
+    gap: 4px;
+    border-radius: 10px;
+    border: black solid 3px;
+    box-shadow: 0px 0px 60px 20px black;
+}
+i {
+    text-align: center;
+    color: black;
+}
+
+@media screen and (max-width: 991px) {
+    ::-webkit-scrollbar {
+        width: 0px;
+    }
+    .card{
+        padding: 20px;
+        width: 40vh;
+        height: 30vh;
+        min-width: 150px;
+        max-width: 300px;
+    }
+}
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 100px;
+    font-size: 0.8rem;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    /* Position */
+    position: absolute;
+    z-index: 1;
+   
+  }
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    
+  }
+  .tt{
+    border: 3px solid white;
+    outline: 3px solid black;
+    width: 100px;
+    height: 30px;
+    border-radius: 15px;
+    box-shadow: inset 0px 0px 40px 2px black;
+    position: relative;
+    bottom: 14px;
+  }
+  .type_text{
+    font-family: 'Bebas Neue', cursive;
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .card__text{
+    font-size: 1.4rem;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    width: 150px;
+    border-radius: 0px 0px 10px 10px;
+    position: relative;
+    bottom: 20px;
+    text-align: center;
+    border: black solid 3px;
+    border-top: none;
+}
+@media screen and (max-width: 400px) {
+    ::-webkit-scrollbar {
+        width: 0px;
+    }
+    .card{
+        padding: 20px;
+        width: 30vh;
+        height: 30vh;
+        min-width: 150px;
+        max-width: 300px;
+    }
+}

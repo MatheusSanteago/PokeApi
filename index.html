@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/cards.css">
+    <script src="https://kit.fontawesome.com/b2d95ced1d.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="/index.html"><h1>Pokédex</h1></a>
+        </header>
+            <nav>
+                <ul class="navbar">
+                    <li>Inicial</li>
+                    <li style="font-weight:bold">Pokémons</li>
+                </ul>
+            </nav>
+            <div class="filter" id="filter">
+                <div class="types">
+                        Fire <input type="radio"  class="checkmark" name="type" id="fire" value="fire">
+                        Water <input type="radio"  class="checkmark" name="type" id="Water" value="water">
+                        Grass <input type="radio"  class="checkmark" name="type" id="grass" value="grass">
+                        Fighting <input type="radio"  class="checkmark" name="type" id="fighting" value="fighting">
+                        Normal <input type="radio"  class="checkmark" name="type" id="normal" value="normal">
+                        Bug <input type="radio"  class="checkmark" name="type" id="bug" value="bug">
+                        Poison <input type="radio"  class="checkmark" name="type" id="poison" value="poison">
+                        Eletric <input type="radio"  class="checkmark" name="type" id="electric" value="electric">
+                        <input type="submit" value="Filter Now" onclick="typesFilter()">
+                </div>
+            </div>
+                <i class="fa-solid fa-filter" onclick="showFilter()"></i>
+                <i class="fa-solid fa-trash" onclick="clearPokedex()"></i>
+            <div id="poked" class="pokedex"> 
+            </div>            
+    </div>      
+    <script src="/scripts/api.js"></script>
+</body>
+</html>
