@@ -7,14 +7,12 @@
     flex-direction: column;
     align-items: center;
 }
-
 body {
     overflow-x: hidden;
     overflow: hidden;
     box-sizing: border-box;
     background-image: url(/assets/img/background.png);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    
 }
 a{
     text-decoration: none;
@@ -27,12 +25,14 @@ header{
     width: 100vw;
     background-color: aliceblue;
     text-align: center;
+    z-index: 1;
 }
 nav {
     width: 100vw;
     height: 28px;
     padding: 10px;
     background-color: rgb(255, 0, 0);
+    z-index: 1;
 }
 .filter{
     position: relative;
@@ -52,7 +52,6 @@ nav {
     right: 50px;
     font-size: 1.5rem;
 }
-
 .fa-trash{
   right: 10px;
 }
@@ -62,7 +61,7 @@ nav {
     cursor: pointer;
 }
 .types {
-    z-index: 1;
+    z-index: 0;
     background-color:rgb(255, 255, 255);
     border: solid rgb(0, 0, 0) 2px;
     border-top: none;
@@ -75,7 +74,6 @@ nav {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-  
 }
 
 ul {
@@ -103,6 +101,7 @@ ul {
     border-radius: 10px;
     overflow: auto;
     gap: 20px;
+    
 }
 ::-webkit-scrollbar {
     width: 10px;
@@ -140,18 +139,16 @@ input:hover{
     font-weight: bold;
     transition: color 1s;
     cursor: pointer;
+    color: white;
 }
 .checkmark{
     width: 40px;
 }
-.id_p{
-    position: relative;
-    bottom: 255px;
-    left: 102px;
-    font-weight: bold;
-    color: white;
-}
+
 @media screen and (max-width: 533px) {
+    ::-webkit-scrollbar {
+       display: none;
+    }
     .types{
         height: 100px;
     }
