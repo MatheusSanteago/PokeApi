@@ -7,8 +7,6 @@
 <h3>Neste projeto utilizei</h3>
 
 - PokeApi 
-- Fetch()
-- Tratamnetos de Strings
 - Design Responsivo 
 
 <h4>Imagens</h4>
