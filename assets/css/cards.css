@@ -6,13 +6,11 @@
     flex-flow: column nowrap;
     border: black solid 4px;
     padding: 25px;
-
     width: 20vw;
     height: 30vh;
     min-width: 150px;
     max-width: 200px;
-
-    margin: 10px;
+    margin: 5px;
     box-shadow: inset 0px 0px 60px 20px black;
 }
 .pokemon__img{
@@ -100,17 +98,13 @@ a{
     font-weight: bold;
     color: white;
 }
-@media screen and (max-width: 991px) {
-    ::-webkit-scrollbar {
-        width: 0px;
-    }
+@media screen and (max-width: 1025px) {
     .card{
         padding: 30px;
         width: 40vh;
         height: 30vh;
         min-width: 150px;
         max-width: 300px;
-        margin-bottom: 40px; 
     }
     .card__text{
         bottom: 50px;
@@ -124,11 +118,27 @@ a{
         bottom: 39px;
     }
     .stats{
+        z-index: 1;
+        position: relative;
+        bottom: 80px;
+    }
+}
+@media screen and (max-width: 769px) {
+    .card{
+        max-width: 200px;
+    }
+    .id_p{
+        left: 110px;
+    }
+    .pokemon__img{
         position: relative;
         bottom: 55px;
     }
+    .tt{
+        bottom: 45px;
+    }
 }
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 426px) {
     .fa-filter, .fa-trash {
         font-size: 1rem;
         top: 75px;
@@ -136,20 +146,28 @@ a{
     .pokedex{
         min-width: 270px;
     }
-    ::-webkit-scrollbar {
-        width: 0px;
-    }
     .card{
         padding: 20px;
-        width: 30vh;
-        height: 30vh;
-        min-width: 150px;
-        max-width: 200px;
+        width: 35vh;
+        max-width: 250px;
+    }
+    .pokemon__img:hover{
+        transform: none;
+    }
+    .pokemon__img{
+        transform: none;
+      
     }
     .card__text{
         bottom: 40px;
     }
+    .id_p{
+        left: 105px;
+        bottom: 265px;
+    }
     .tt{
-        margin-top: 8px;
+       height: 30px;
+       padding: 0px 10;
+       bottom: 40px;
     }
 }
