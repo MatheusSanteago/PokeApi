@@ -36,14 +36,13 @@ export function typesFilter(e) {
 export function clearPokedex() {
   pokedex.innerHTML = "";
 };
-export function generatePokemon(type) {
-  for (let i = 1; i < 50; i++) {
+export function generatePokemon(type, qnt) {
+  for (let i = 1; i < qnt; i++) {
     let aux = i;
     fetch(`https://pokeapi.co/api/v2/pokemon/${i}/`, { method: "GET" })
       .then((res) => res.json())
       .then((data) => {
         if (type) {
-          let errorSpan = document.getElementById("erromsg");
           if (data.types[0].type.name != type) {
           } else {
             createCard(data, aux);

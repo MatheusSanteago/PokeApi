@@ -70,5 +70,15 @@
         </div>            
     </div>      
     <script src="/js/main.js" type="module"></script>
+    <script>
+        function getID(e) {
+        e.classList;
+        let pokeInfo = {
+            id: e.classList,
+            backgroundColor: e.parentNode.style.backgroundColor,
+        }
+        localStorage.setItem("Pokemon", `${JSON.stringify(pokeInfo)}`);
+    };
+    </script>
 </body>
 </html>

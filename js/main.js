@@ -2,17 +2,8 @@ import { clearPokedex, generatePokemon, showFilter, typesFilter } from "../scrip
 
 let faIcons = document.querySelectorAll('.fa');
 let btnSubmit = document.querySelector('#btnFilter');
-
-generatePokemon(null);
-
-function getID(e) {
-    e.classList;
-    localStorage.setItem(
-      "Pokemon",
-      `${e.classList},${e.parentNode.style.backgroundColor}`
-    );
-    localStorage.setItem("Color", `${e.parentNode.style.backgroundColor}`);
-};
+    
+generatePokemon(null,50);
 
 faIcons[0].addEventListener('click', () => {
     showFilter();

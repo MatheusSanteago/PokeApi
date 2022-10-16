@@ -1,20 +1,8 @@
-let data = localStorage.getItem("Pokemon");
+let data = JSON.parse(localStorage.getItem("Pokemon"));
 let pokemonData = document.querySelectorAll(".pokemon__data");
-var colors;
-let id;
 
-if (data.length == 18) {
-  if (data[1].includes(",")) {
-    id = data[0];
-    colors = "" + data.substring(2);
-  } else {
-    id = data[0] + data[1];
-    colors = "" + data.substring(3);
-  }
-} else {
-  id = data.substring(0, 2);
-  colors = "" + data.substring(3);
-}
+var colors = data.backgroundColor;
+let id = data.id[0];
 
 function generatePokemon(id) {
   fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`, { method: "GET" })
@@ -55,19 +43,13 @@ function encouterArea(URL) {
         aux = aux.toLowerCase().replace(/(?:^|\s)\S/g, function (a) {
           return a.toUpperCase();
         });
-
         if (aux.includes("Area")) {
           aux = aux.substring(aux.indexOf("Area"), 0);
         }
-
         places += `<p>${aux}</p>`;
-
       });
-        //console.log(places);
       localStorage.setItem("locals", JSON.stringify(places));
-      
     });
-
   return setArea();
 }
 function setArea() {
