@@ -1,9 +1,8 @@
-var checked = true;
-var pokedex = document.getElementById("poked");
-var filterPage = document.getElementById("filter");
-var fliped = true;
-var cards = document.querySelectorAll(".card");
-let x = [];
+let checked = false;
+let pokedex = document.getElementById("poked");
+let filterPage = document.querySelector("#filter");
+let fliped = true;
+let cards = document.querySelectorAll(".card");
 
 function getID(e) {
   e.classList;
@@ -15,21 +14,28 @@ function getID(e) {
   localStorage.setItem("Color", `${e.parentNode.style.backgroundColor}`);
 }
 function showFilter() {
-  switch (checked) {
-    case true:
-      filterPage.style.display = "flex";
-      filterPage.classList.add("filter__down");
-      checked = false;
-      break;
-    case false:
-      filterPage.classList.remove("filter__down");
-      filterPage.style.display = "none";
-      checked = true;
-      break;
-    default:
-      break;
+  if(!checked){
+    filterPage.style.display = 'flex';
+    swipFilter(filterPage, '-200px','0px');
+    checked = true;
+  } else {
+    swipFilter(filterPage, '0px','-200px');
+    setTimeout(()=>{
+      filterPage.style.display = 'none';
+    }, 500);
+    checked = false;
   }
 }
+function swipFilter(element, start, end){
+  element.animate([
+    {top: start},
+    {top: end}
+  ],{
+    duration: 700,
+    iterations: 1
+  })
+}
+
 function typesFilter(e) {
   var inputData = document.querySelectorAll('input[type="radio"]');
   inputData.forEach((element) => {
@@ -61,9 +67,12 @@ function generatePokemon(type) {
         }
       });
   }
-}
+};
+let isArray = [];
+
 function createCard(data, id) {
   let pokemonName = data.name;
+  isArray.push(Object.entries(data));
   pokedex.innerHTML += `<div class="card ${id}" style="background-color: ${colors(data.types[0].type.name)};">
                             <a href="/profile.html" onclick="getID(this)" target="_blank" class="${id}">"<h3 class="card__text">${pokemonName[0].toUpperCase() + pokemonName.substring(1)}</h3></a>
                             <div class="tt" style="background-image: linear-gradient(white,${colors(data.types[0].type.name)},${colors(data.types[0].type.name)},silver);"><p class="type_text">${data.types[0].type.name}</p></div>
@@ -81,7 +90,7 @@ function createCard(data, id) {
                                 </div>
                             </div>
                             </div>`;
-}
+};
 function colors(types) {
   switch (types) {
     case "grass":
@@ -136,5 +145,5 @@ function colors(types) {
     default:
       break;
   }
-}
+};
 generatePokemon(null);
