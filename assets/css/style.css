@@ -23,6 +23,7 @@ h1{
 header{
     padding: 10px;
     width: 100vw;
+    height: 40px;
     background-color: aliceblue;
     text-align: center;
     z-index: 1;
@@ -31,54 +32,83 @@ nav {
     width: 100vw;
     height: 28px;
     padding: 10px;
-    background-color: rgb(255, 0, 0);
+    background-color: black;
     z-index: 1;
 }
 .filter{
     position: relative;
     display: none;
-}
-.filter__down{
-    animation: roll__down .2s ease 1;
-}
-.filter__up{
-    animation: roll__down .2s ease 1 reverse;
-    visibility: hidden;
+    z-index: 0;
 }
 .fa-filter, .fa-trash{
+    color: white;
     z-index: 1;
     position: absolute;
-    top: 70px;
+    top: 72px;
     right: 50px;
     font-size: 1.5rem;
 }
 .fa-trash{
   right: 10px;
 }
-.fa-filter:hover{
-    color: white;
+.fa:hover{
+    color: #bcb6b6;
     transition: color 1s;
     cursor: pointer;
 }
 .types {
-    z-index: 0;
     background-color:rgb(255, 255, 255);
-    border: solid rgb(0, 0, 0) 2px;
+    border: solid black 4px;
     border-top: none;
-    width: 80vw;
-    height: 40px;
-    padding: 10px;
-    border-radius: 0px 0px 10px 10px;
+    width: 86vw;
+    height: 100px;
+    box-sizing: border-box;
+    color: black;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
 }
-
+.types > label {
+    padding: 10px;
+}
+.types > label > span {
+    padding: 8px;
+    width: fit-content;
+    border: solid black 3px;
+}
+.types > label > span:hover {
+    background-color: rgb(0, 0, 0);
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    transition: color 0.5s;
+}
+label input:checked ~ span {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
+input[type='radio']{
+    display: none;
+}
+input[type='submit']{
+    background-color:#bcb6b6;
+    font-size: 1.05rem;
+    width: 100px;
+    padding: 7px 0px;
+    border: solid black 4px;
+    text-align: center;
+}
+input:hover{
+    background-color: black;
+    font-weight: bold;
+    transition: color 1s;
+    cursor: pointer;
+    color: white;
+}
 ul {
     list-style: none;
-    border-radius: 0px 0px 10px 10px;
     color: white;
     padding: 5px;
 }
@@ -90,7 +120,7 @@ ul {
     align-items: center;
 }
 .pokedex{
-    border: black solid 3px;
+    border: black solid 4px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -98,58 +128,27 @@ ul {
     margin-top: 10px;
     width: 85vw;
     height: 85vh;
-    border-radius: 10px;
     overflow: auto;
-    gap: 20px;
-    
+    gap: 10px;
+    z-index: 1;
 }
 ::-webkit-scrollbar {
     width: 10px;
 }
 ::-webkit-scrollbar-track {
     background: #ffffff;
-    border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb {
     background: #888;
-    border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
-@keyframes roll__down {
-    from {
-        top: -100px;
-    }
-    to {
-        top: 0px;
-        transition-duration: 2s;
-    } 
-}
-input{
-    background-color: white;
-    border-radius: 10px;
-    width: 80px;
-    border: solid black 2px;
-    padding: 5px;
-    text-align: center;
-}
-input:hover{
-    background-color: rgb(0, 0, 0);
-    font-weight: bold;
-    transition: color 1s;
-    cursor: pointer;
-    color: white;
-}
-.checkmark{
-    width: 40px;
-}
-
-@media screen and (max-width: 533px) {
+@media screen and (max-width: 720px) {
     ::-webkit-scrollbar {
        display: none;
     }
     .types{
-        height: 100px;
+        height: 200px;
     }
 }

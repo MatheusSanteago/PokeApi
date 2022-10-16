@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./assets/css/cards.css">
     <link rel="shortcut icon" href="./assets/img/pokebol.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/b2d95ced1d.js" crossorigin="anonymous"></script>
-    <title>Document</title>
+    <title>Pokedex</title>
 </head>
 <body>
     <div class="container">
@@ -22,20 +22,46 @@
                 </ul>
             </nav>
             <div class="filter" id="filter">
-                <div class="types">
-                        Fire <input type="radio"  class="checkmark" name="type" id="fire" value="fire">
-                        Water <input type="radio"  class="checkmark" name="type" id="Water" value="water">
-                        Grass <input type="radio"  class="checkmark" name="type" id="grass" value="grass">
-                        Fighting <input type="radio"  class="checkmark" name="type" id="fighting" value="fighting">
-                        Normal <input type="radio"  class="checkmark" name="type" id="normal" value="normal">
-                        Bug <input type="radio"  class="checkmark" name="type" id="bug" value="bug">
-                        Poison <input type="radio"  class="checkmark" name="type" id="poison" value="poison">
-                        Eletric <input type="radio"  class="checkmark" name="type" id="electric" value="electric">
+                <div>
+                    <ul class="types">
+                        <label for="fire">
+                            <input type="radio"  class="checkmark" name="type" id="fire" value="fire" checked="checked">
+                            <span>Fire</span>
+                        </label>
+                       <label for="Water">
+                            <input type="radio"  class="checkmark" name="type" id="Water" value="water">
+                            <span>Water</span>
+                        </label>
+                        <label for="grass">
+                            <input type="radio"  class="checkmark" name="type" id="grass" value="grass">
+                            <span>Grass</span>
+                        </label>
+                        <label for="fighting">
+                            <input type="radio"  class="checkmark" name="type" id="fighting" value="fighting">
+                            <span>Fighting</span>
+                        </label>
+                        <label for="normal">
+                            <input type="radio"  class="checkmark" name="type" id="normal" value="normal">
+                            <span>Normal</span>
+                        </label>
+                        <label for="bug">
+                            <input type="radio"  class="checkmark" name="type" id="bug" value="bug">
+                            <span>Bug</span>
+                        </label>
+                        <label for="poison">
+                            <input type="radio"  class="checkmark" name="type" id="poison" value="poison">
+                            <span>Poison</span>
+                        </label>
+                        <label for="electric">
+                            <input type="radio"  class="checkmark" name="type" id="electric" value="electric"></li>
+                            <span>Eletric</span>
+                        </label>
                         <input type="submit" value="Filter Now" onclick="typesFilter()">
+                    </ul>
                 </div>
             </div>
-                <i class="fa-solid fa-filter" onclick="showFilter()"></i>
-                <i class="fa-solid fa-trash" onclick="clearPokedex()"></i>
+                <i class="fa-solid fa-filter fa" onclick="showFilter()"></i>
+                <i class="fa-solid fa-trash fa" onclick="clearPokedex()"></i>
             <main>
                 <div id="poked" class="pokedex"> 
                   
