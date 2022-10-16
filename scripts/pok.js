@@ -4,7 +4,6 @@ var colors;
 let id;
 
 if (data.length == 18) {
-  console.log(data);
   if (data[1].includes(",")) {
     id = data[0];
     colors = "" + data.substring(2);
@@ -16,9 +15,6 @@ if (data.length == 18) {
   id = data.substring(0, 2);
   colors = "" + data.substring(3);
 }
-
-// console.log(data.length);
-// console.log(colors)
 
 function generatePokemon(id) {
   fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`, { method: "GET" })
@@ -44,10 +40,8 @@ function generatePokemon(id) {
                                             <h4> Where to find ? </h4>
                                                 ${encouterArea(pokemon.location_area_encounters)}
                                             </div>`;
-      console.log(pokemon);
     });
 }
-
 function encouterArea(URL) {
   var places = "";
   var aux = "";
@@ -77,11 +71,9 @@ function encouterArea(URL) {
   return setArea();
 }
 function setArea() {
-  area = JSON.parse(localStorage.getItem("locals"));
-  
+  let area = JSON.parse(localStorage.getItem("locals"));
   return area;
 }
-
 function generateAbilities(pokemon) {
   var abilitys = "";
       pokemon.abilities.forEach((e, i) => {

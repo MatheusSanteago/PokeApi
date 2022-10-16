@@ -40,7 +40,6 @@ function typesFilter(e) {
   var inputData = document.querySelectorAll('input[type="radio"]');
   inputData.forEach((element) => {
     if (element.checked) {
-      console.log("Type select = " + element.value);
       clearPokedex();
       generatePokemon(element.value);
     }
@@ -56,7 +55,6 @@ function generatePokemon(type) {
       .then((res) => res.json())
       .then((data) => {
         if (type) {
-          console.log("Type OK");
           errorSpan = document.getElementById("erromsg");
           if (data.types[0].type.name != type) {
           } else {
