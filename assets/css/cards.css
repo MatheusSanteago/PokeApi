@@ -4,7 +4,7 @@
     display: flex;
     align-items: center;
     flex-flow: column nowrap;
-    border: black solid 3px;
+    border: black solid 4px;
     padding: 25px;
 
     width: 20vw;
@@ -12,7 +12,6 @@
     min-width: 150px;
     max-width: 200px;
 
-    border-radius: 10px;
     margin: 10px;
     box-shadow: inset 0px 0px 60px 20px black;
 }
@@ -32,14 +31,13 @@
 .stats {
     background-color: beige;
     display: flex;
-    width: 180px;
+    justify-content: center;
+    gap: 5px;
+    border: #000000 solid 4px;
+    width: 200px;
     padding: 10px;
-    gap: 3px;
-    border-radius: 10px;
-    border: black solid 3px;
-    box-shadow: 0px 0px 60px 20px black;
     position: relative;
-    bottom: 50px;
+    bottom: 30px;
 }
 i {
     text-align: center;
@@ -49,7 +47,7 @@ i {
     position: relative;
     display: inline-block;
     cursor: pointer;
-  }
+}
   .tooltip .tooltiptext {
     visibility: hidden;
     width: 100px;
@@ -57,52 +55,47 @@ i {
     background-color: black;
     color: #fff;
     text-align: center;
-    border-radius: 6px;
     padding: 5px 0;
-    /* Position */
     position: absolute;
     z-index: 1;
-  }
-  .tooltip:hover .tooltiptext {
+}
+.tooltip:hover .tooltiptext {
     visibility: visible;
-    
-  }
-  .tt{
-    border: 3px solid white;
-    outline: 3px solid black;
-    width: 100px;
-    height: 30px;
-    padding: 4px;
-    border-radius: 15px;
+}
+.tt{
+    border: 2px solid white;
+    outline: 2px solid black;
+    width: 70px;
+    padding: 5px 10px;
+    border-radius: 10px;
     box-shadow: inset 0px 0px 4px 3px black;
     position: relative;
-    bottom: 40px;
-  }
-  a{
+    bottom: 35px;
+    text-align: center;
+}
+a{
     text-decoration: none;
-  }
-  .type_text{
+}
+.type_text{
     font-family: 'Bebas Neue', cursive;
     color: white;
-    font-size: 1.5rem;
-    text-align: center;
-  }
-  .card__text{
+    font-size: 1.3rem;
+}
+.card__text{
     color: black;
     font-size: 1.4rem;
     background-color: rgb(255, 255, 255);
     padding: 10px;
     width: 150px;
-    border-radius: 0px 0px 10px 10px;
     position: relative;
     bottom: 44px;
     text-align: center;
-    border: black solid 3px;
+    border: black solid 4px;
     border-top: none;
 }
 .id_p{
     position: relative;
-    bottom: 275px;
+    bottom: 270px;
     left: 106px;
     font-weight: bold;
     color: white;
@@ -123,8 +116,8 @@ i {
         bottom: 50px;
     }
     .id_p{
-        left: 120px;
-        bottom: 32vh;
+        left: 160px;
+        bottom: 285px;
     }
     .pokemon__img{
         position: relative;
@@ -135,7 +128,6 @@ i {
         bottom: 55px;
     }
 }
-
 @media screen and (max-width: 375px) {
     .fa-filter, .fa-trash {
         font-size: 1rem;
@@ -156,10 +148,6 @@ i {
     }
     .card__text{
         bottom: 40px;
-    }
-    .id_p{
-        left: 100px;
-        bottom: 32vh;
     }
     .tt{
         margin-top: 8px;
