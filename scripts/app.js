@@ -1,19 +1,8 @@
 let checked = false;
 let pokedex = document.getElementById("poked");
 let filterPage = document.querySelector("#filter");
-let fliped = true;
-let cards = document.querySelectorAll(".card");
 
-function getID(e) {
-  e.classList;
-
-  localStorage.setItem(
-    "Pokemon",
-    `${e.classList},${e.parentNode.style.backgroundColor}`
-  );
-  localStorage.setItem("Color", `${e.parentNode.style.backgroundColor}`);
-}
-function showFilter() {
+export function showFilter() {
   if(!checked){
     filterPage.style.display = 'flex';
     swipFilter(filterPage, '-200px','0px');
@@ -25,7 +14,7 @@ function showFilter() {
     }, 500);
     checked = false;
   }
-}
+};
 function swipFilter(element, start, end){
   element.animate([
     {top: start},
@@ -34,9 +23,8 @@ function swipFilter(element, start, end){
     duration: 700,
     iterations: 1
   })
-}
-
-function typesFilter(e) {
+};
+export function typesFilter(e) {
   var inputData = document.querySelectorAll('input[type="radio"]');
   inputData.forEach((element) => {
     if (element.checked) {
@@ -44,18 +32,18 @@ function typesFilter(e) {
       generatePokemon(element.value);
     }
   });
-}
-function clearPokedex() {
+};
+export function clearPokedex() {
   pokedex.innerHTML = "";
-}
-function generatePokemon(type) {
-  for (i = 1; i < 50; i++) {
+};
+export function generatePokemon(type) {
+  for (let i = 1; i < 50; i++) {
     let aux = i;
     fetch(`https://pokeapi.co/api/v2/pokemon/${i}/`, { method: "GET" })
       .then((res) => res.json())
       .then((data) => {
         if (type) {
-          errorSpan = document.getElementById("erromsg");
+          let errorSpan = document.getElementById("erromsg");
           if (data.types[0].type.name != type) {
           } else {
             createCard(data, aux);
@@ -66,11 +54,8 @@ function generatePokemon(type) {
       });
   }
 };
-let isArray = [];
-
 function createCard(data, id) {
   let pokemonName = data.name;
-  isArray.push(Object.entries(data));
   pokedex.innerHTML += `<div class="card ${id}" style="background-color: ${colors(data.types[0].type.name)};">
                             <a href="/profile.html" onclick="getID(this)" target="_blank" class="${id}">"<h3 class="card__text">${pokemonName[0].toUpperCase() + pokemonName.substring(1)}</h3></a>
                             <div class="tt" style="background-image: linear-gradient(white,${colors(data.types[0].type.name)},${colors(data.types[0].type.name)},silver);"><p class="type_text">${data.types[0].type.name}</p></div>
@@ -144,4 +129,3 @@ function colors(types) {
       break;
   }
 };
-generatePokemon(null);
